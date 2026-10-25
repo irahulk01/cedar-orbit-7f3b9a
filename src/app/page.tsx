@@ -1,69 +1,21 @@
-import Image from "next/image";
-import styles from "./page.module.css";
-
-export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>
-            To get started, edit the{" "}
-            <code className={styles.code}>page.tsx</code> file.
-          </h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
-}
+import Image from 'next/image';
+import Link from 'next/link';
+import DonationForm from './donation-form';
+import Video from './video';
+import PressStories from './press-stories';
+export default function Home(){return <>
+ <a href="#main" className="skip-link">Skip to content</a>
+ <div className="topline"><span className="status-dot"/> Campaign in preparation · Donations are not open</div>
+ <header className="site-header"><Link className="brand" href="/" aria-label="Nepal Together home"><span className="brand-mark" aria-hidden="true">↟</span><span>NEPAL<span className="brand-sub">TOGETHER</span></span></Link><nav aria-label="Main navigation"><a href="#story">The story</a><a href="#approach">Our approach</a><a href="#press">In the press</a><Link href="/accountability">Transparency</Link></nav><a className="nav-cta" href="#donate">Stand with Nepal ↗</a></header>
+ <main id="main">
+ <section className="hero"><div className="hero-copy"><span className="eyebrow">A SHARED FUTURE. A COLLECTIVE EFFORT.</span><h1>After the flood,<br/>comes <em>hope.</em></h1><p>When the waters rise, so can we.<br/>Stand with Nepal’s flood-affected families on the long road to recovery.</p><div className="hero-actions"><a className="button" href="#donate">Explore giving <span>↗</span></a><a className="text-link" href="#story">Understand the need ↓</a></div><div className="hero-meta"><span>Independent campaign</span><span>Transparent by design</span></div></div><figure className="hero-photo"><Image src="/images/bagmati-2020.webp" alt="Floodwater across Nepal’s Bagmati River beneath a cloudy sky" fill priority sizes="(max-width: 800px) 100vw, 50vw"/><div className="photo-label"><span>NEPAL · BAGMATI RIVER</span><strong>A river connects us.<br/>So does our humanity.</strong></div><figcaption>Historical photograph · July 2020 · Gaurav Dhwaj Khadka · <a href="/accountability#media">CC BY-SA 4.0</a></figcaption></figure></section>
+ <div className="principles"><span>01 / Real reporting</span><span>02 / Clear fund allocation</span><span>03 / Accountable giving</span></div>
+ <section id="story" className="story section-pad"><div><span className="eyebrow">BEHIND THE HEADLINES</span><h2>A flood passes.<br/>The need stays.</h2><p>Recovery goes beyond the first days of an emergency. Families need a safe place to live, access to everyday essentials, and a path back to school and work.</p><p>Hear from UNICEF’s reporting on emergency supply delivery in Nepal. This report is dated 27 August 2026 and does not represent a live update.</p><a className="text-link" href="https://www.unicefusa.org/videos/emergency-supply-delivery-underway-after-nepal-floods?form=donate" target="_blank" rel="noreferrer">View the original reporting ↗</a></div><Video/></section>
+ <PressStories/>
+ <section id="approach" className="needs section-pad"><div className="section-top"><span className="eyebrow">THE RECOVERY WE HOPE TO SUPPORT</span><span className="quiet-label">Proposed priorities / 01—03</span></div><h2>Small acts.<br/>Lasting possibilities.</h2><div className="columns"><article><span className="number">01</span><h3>A safe place to start</h3><p>Shelter and basic household essentials can help families regain stability after displacement.</p><span className="category">SHELTER & DIGNITY</span></article><article><span className="number">02</span><h3>The everyday essentials</h3><p>Clean water, hygiene, and food are a foundation for recovery and wellbeing.</p><span className="category">BASIC NEEDS</span></article><article><span className="number">03</span><h3>A way forward</h3><p>Restoring learning and livelihoods helps communities rebuild their daily lives.</p><span className="category">LONG-TERM RECOVERY</span></article></div><p className="needs-note">These are proposed priorities, not claims of aid delivered. Delivery partners and a detailed budget will be published before donations open.</p></section>
+ <section className="landscape section-pad"><figure><Image src="/images/bagmati-2021.webp" alt="The swollen Bagmati River in Nepal, photographed in September 2021" width={1800} height={1350} sizes="(max-width: 800px) 100vw, 55vw"/><figcaption>Historical context · September 2021 · Gaurav Dhwaj Khadka · <a href="/accountability#media">CC BY-SA 4.0</a></figcaption></figure><div><span className="eyebrow">CARE WITHOUT DISTANCE</span><h2>You don’t have to be nearby<br/>to stand beside someone.</h2><p>This campaign is being built for supporters outside Nepal. We are preparing a clear, accountable way to connect international generosity with flood recovery in Nepal.</p><p className="small-copy">The Nepal-based recipient’s registration and banking arrangements are awaiting confirmation. Collection remains closed.</p></div></section>
+ <section id="donate" className="donate section-pad"><div><span className="eyebrow">GENEROSITY STARTS WITH TRUST</span><h2>A little from you.<br/><em>A beginning for someone.</em></h2><p>Explore the giving experience in your preferred currency. This is a preview: no donation is processed and no money changes hands.</p><ul className="giving-notes"><li>One-time giving in five currencies</li><li>Donations from Nepal excluded</li><li>Live checkout pending recipient approval</li></ul><Link className="text-link" href="/accountability">Read our launch commitments ↗</Link></div><DonationForm/></section>
+ <section className="faq section-pad"><div><span className="eyebrow">BEFORE YOU GIVE</span><h2>Good questions.<br/>Clear answers.</h2></div><div className="questions"><details><summary>Can I donate right now?</summary><p>No. This is a working website preview. The receiving organisation, banking arrangements, and payment provider must be approved before collection opens.</p></details><details><summary>Who will receive and distribute the funds?</summary><p>A recipient has not yet been appointed. We will publish its legal identity, delivery role, budget, fees, and reporting commitments before launch.</p></details><details><summary>Why are donations from Nepal excluded?</summary><p>This campaign is intended for supporters outside Nepal. The preview rejects a Nepali residence or billing country. Live enforcement will also require payment-provider controls and location checks; self-declarations alone are insufficient.</p></details><details><summary>Are the photographs and video genuine?</summary><p>Yes. The main landscape photographs show the Bagmati River in 2020 and 2021 under a Creative Commons license. The press archive uses the news-image previews supplied by the campaign owner, with dates, source links, and available credits. The Getty preview retains its watermark. These are not photographs of aid delivered by this campaign. The video links to original UNICEF reporting.</p></details><details><summary>Will I receive a tax-deductible receipt?</summary><p>No tax benefit is promised. Any future receipt or tax treatment will depend on the approved recipient, donor jurisdiction, and payment arrangement.</p></details></div></section>
+ <section className="closing"><span className="eyebrow">NEPAL / TOGETHER</span><h2>Hope is something<br/>we build together.</h2><a className="button light" href="#donate">Explore the donation preview ↗</a></section>
+ </main><footer><Link className="footer-brand" href="/">NEPAL / TOGETHER</Link><p>Independent campaign in preparation.<br/>No affiliation with UNICEF, the UN, or the photographer is implied.</p><div><Link href="/accountability">Transparency & media credits</Link><Link href="/privacy">Privacy</Link><a href="#main">Back to top ↑</a></div></footer>
+ </>}

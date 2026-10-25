@@ -1,0 +1,3 @@
+'use client';
+import {useState} from 'react';
+export default function Video(){const[playing,setPlaying]=useState(false);return <div className="video-frame">{playing?<iframe src="https://www.youtube-nocookie.com/embed/ORvL7inVgNU?autoplay=1" title="UNICEF: Emergency Supply Delivery Underway After Nepal Floods, 27 August 2026" allow="autoplay; encrypted-media; picture-in-picture" allowFullScreen/>:<button type="button" className="video-cover" onClick={()=>setPlaying(true)}><span className="play">▶</span><span>Watch the field report</span><small>UNICEF USA · 27 August 2026</small></button>}<p className="video-privacy">{playing?'Video provided by YouTube.':'YouTube loads only when you press play.'}</p></div>}

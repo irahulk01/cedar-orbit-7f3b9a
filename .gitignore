@@ -39,3 +39,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Share configuration examples, never live credentials
+!.env.example
+
+# Original downloads; the app serves optimized WebP assets
+/public/images/*.jpg
+/public/images/press/*.jpg
